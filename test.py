@@ -1,5 +1,3 @@
-import os
-import numpy as np
 from itertools import combinations
 
 class elemento:
@@ -8,7 +6,7 @@ class elemento:
         self.peso= peso
         self.calorias= calorias
 
-def listar_elementos_caloriaspeso(items,calorias_min,peso_limite):
+def listar_elementos_caloriaspeso(items: list,calorias_min:int ,peso_limite:int ):
     #lista las combinaciones posibles
     n = len(items)
     lista_combinations = []
@@ -28,7 +26,8 @@ def listar_elementos_caloriaspeso(items,calorias_min,peso_limite):
           #print("Total calorias", total_calorias)
     return lista_combinaciones_validas
 
-def elegir_combinacion(lista_combinaciones):
+def elegir_combinacion(lista_combinaciones:list ):
+  #selecciona la mejor combinacion con mas calorias y menos peso
   combinacion=(0,1000,0)
   for elem in lista_combinaciones:
     if elem[2]>=combinacion[2]:
@@ -58,7 +57,6 @@ total_peso = sum(item.peso for item in items)
 
 #llamar maximizar calorias
 lista_elementos=listar_elementos_caloriaspeso(items,calorias_int,peso_int)
-#print(lista_elementos)
 
 seleccion=elegir_combinacion(lista_elementos)
 
