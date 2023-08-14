@@ -55,7 +55,7 @@ items=[E1, E2, E3, E4, E5]
 total_peso = sum(item.peso for item in items)
 #print("Peso Total:", total_peso)
 
-#llamar maximizar calorias
+#llamar lista de combinaciones que cumplen los criterios ingresados por el usuario
 lista_elementos=listar_elementos_caloriaspeso(items,calorias_int,peso_int)
 
 seleccion=elegir_combinacion(lista_elementos)
